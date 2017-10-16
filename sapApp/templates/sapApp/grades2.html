@@ -1,0 +1,95 @@
+<html>
+    <head>
+        {% load static %}
+        <title>Grading Assessment</title>
+		<link rel="stylesheet" type="text/css" href="{% static 'sapApp/grades2.css' %}">
+    </head>
+    <body>
+        <div class="webpage">
+            <div class="header">
+                <div class="header-bar1">
+                    <div class="item-container">
+                        <div class="bar-photo">
+                            <a href="/sapApp/dashboard/"><img src = "{% static 'sapApp/Images/saplogo.png' %}" width=65 height=32></a>
+                        </div>
+                        <div class="bar-item-container">
+                        <div class="bar-item">
+                            <a href="/sapApp/students/"><span class="item">STUDENTS</span></a>
+                        </div>
+                            </div>
+                        <div class="bar-item-container">
+                        <div class="bar-item">
+                            <a href="/sapApp/grades/"><span class="item">GRADES</span></a>
+                        </div>
+                        </div>
+                        <div class="bar-item-container">
+                        <div class="bar-item">
+                            <a href="/sapApp/reports/"><span class="item">REPORTS</span></a>
+                        </div>
+                    </div>
+                        
+                    </div>
+                    <div class="item-container3">
+                        <div class="bar-item2">
+                            <span class="greetings">Hi, Lyn Reyes!</span>
+                        </div>
+                        <div class="bar-photo">
+                            <img src = "{% static 'sapApp/Images/usericon.png' %}" width=32 height=28>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header2">
+                <div class="header2-bar2">
+                    <div class="item-container2">
+                    <div class="bar-title">
+                        <span class ="bigtext">GRADING ASSESSMENT</span>
+                    </div>
+                    <div class="search-container">
+                        <input type="text" class="search" placeholder="Search">
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="middle">
+                
+                    <div class="table-container">
+                        <div class="top-color">.</div>
+                        <div class="head"> Student's Name:</div> <div class="name"> Juan Doe</div>
+                        <div class="head2"> Territory:</div> <div class="territory"> API</div>
+                            <div class="grade-container">
+
+                                <table>
+                                    <tr>
+                                        <div class="header-container">
+                                            <th>Training</th>
+                                            <th>Week #</th>
+                                            <th>Attendance</th>
+                                            <th>Rating</th>
+                                        </div>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>SAP Strategy</td>
+                                        <td>5</td>
+                                        <td><input type="checkbox" class="attendance"></td>
+                                        <td><input type="text" class="grade"></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Quality for Success</td>
+                                        <td>11</td>
+                                        <td><input type="checkbox" class="attendance"></td>
+                                        <td><input type="text" class="grade"></td>
+
+
+                                    </tr>
+                            </table>
+                        </div>
+                    </div>
+                
+                
+            </div>
+        </div>
+    </body>
+</html>

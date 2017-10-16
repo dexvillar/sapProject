@@ -1,0 +1,170 @@
+<html>
+    <head>
+        {% load static %}
+		<link rel="stylesheet" type="text/css" href="{% static 'sapApp/userprofile.css' %}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
+        <script>
+            function password() {
+                var new_div1 = document.createElement("div");
+                var new_div2 = document.createElement("div");
+                var new_password = document.createElement("div");
+                var new_input1 = document.createElement("input");
+                var new_input2 = document.createElement("input");
+                
+                new_div1.textContent = "New Password";
+                new_div2.textContent = "Confirm Password";
+                new_input1.setAttribute("type", "password");
+                new_input2.setAttribute("type", "password");
+                
+                new_password.className = "password";
+                new_div1.className = "newpass";
+                new_div2.className = "confirmpass";
+                new_input1.className = "pw1";
+                new_input2.className = "pw2";
+                
+                new_div1.appendChild(new_input1);
+                new_div2.appendChild(new_input2);
+                
+                new_password.appendChild(new_div1);
+                new_password.appendChild(new_div2);
+                $(".pass-body").append(new_password);
+                
+                
+                
+            }
+        </script>
+        <title>My Profile</title>
+    </head>
+    <body>
+        <div class="webpage">
+            <div class="header">
+                <div class = "left">
+                    
+                        <div class="bar-photo">
+                            <a href="/sapApp/dashboard/"><img src = "{% static 'sapApp/Images/saplogo.png' %}" width=65 height=32></a>
+                        </div>
+                        <div class="bar-item-container">
+                            <div class="bar-item">
+                                <a href="/sapApp/students/"><span class="item">STUDENTS</span></a>
+                            </div>
+                            </div>
+                    
+                    
+                        <div class="dropdown2">
+                                <span class="item" style="margin-left: 1.8em; cursor: pointer;">GRADES</span>
+                            <div class="dropdown-content2">
+                        <ul>
+                            <a href="/sapApp/grades/"><li>Asia Pacific Japan</li></a>
+                            <a href="/sapApp/grades/"><li>Europe Middle East</li></a>
+                            <a href="/sapApp/grades/"><li>Moscow East Europe</li></a>
+                            <a href="/sapApp/grades/"><li>North America</li></a>
+                        </ul>
+                    </div>
+                        </div>
+                    
+                    
+                        <div class="bar-item-container">
+                            <div class="bar-item">
+                                <a href="/sapApp/reports/"><span class="item">REPORTS</span></a>
+                            </div>
+                        
+                    </div>
+                </div>
+                <div class = "right">
+                    <div class="bar-item2">
+                        <span class="greetings">Hi, {{currentUser.first_name}} {{currentUser.last_name}}!</span>
+                    </div>
+                    <div class="dropdown">
+                    <img src = "{% static 'sapApp/Images/usericon.png' %}" width=32 height=28>
+                        <div class="dropdown-content">
+                            <ul>
+                                <a href="https://experience.sap.com/fiori-design-web/colors/"><li>My Profile</li></a>
+                                <a href="/sapApp/signUp/"><li>Create an Account</li></a>
+                                <a href="/sapApp/exitSession/"><li>Log-out</li></a>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header2">
+                <div class="header2-bar2">
+                    <div class="item-container2">
+                    <div class="bar-title">
+                        <span class ="bigtext">MY PROFILE</span>
+										
+                    </div>
+                    <div class="search-container">
+                        <input type="text" class="search" placeholder="Search">
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="middle">
+               <div class="body">
+                   <div class="leftside">
+                       <div class="profilepic">
+                            <img src="{% static 'sapApp/Images/BagHead.png' %}" width=298 height=300>
+                       </div>
+                       <div class="leftside-body">
+                           <div class="myname">{{currentUser.first_name}} {{currentUser.last_name}}</div>
+                           <div class="empno"><b>Employee ID:</b> {{currentUser.employee_id}}</div>
+                           <div class="editprofile">
+                                <button>Update Profile Picture</button>
+                           </div>
+                        </div>
+                   </div>
+                   <div class="rightside">
+                        <div class="aboutme">
+                            <div class="topcolor1">
+                                <div class="me">About Me</div>
+                            </div>
+                                <div class="me-body">
+                                    <div class="email"><b>Email Address: </b>user@sample.com</div>
+                                    <div class="position"><b>Position: </b>{{currentUser.work_position}}</div>
+                                    <div class="territory"><b>Territory: </b>Asia Pacific Japan</div>
+                                    <div class="country"><b>Country:</b>Philippines</div>
+                                </div>
+                       </div>
+                       <div class="mypassword">
+                           <div class="topcolor2">
+                               <div class="pass">
+                                   My Password
+                               </div>
+                           </div>
+                           <div class="pass-body">
+                                <div id="password">
+                                    <div class="newp">
+                                        <span class="newp-text">Old Password: </span>
+                                        <span class="input1"><input type="password"></span>
+                                   </div>
+                                    <div class="newp">
+                                        <span class="newp-text">New Password: </span>
+                                        <span class="input1"><input type="password"></span>
+                                   </div>
+                                    <div class="confirmp">
+                                        <span class="confirmp-text">Confirm Password: </span>
+                                        <span class="input2"><input type="password"></span>
+                                   </div>
+                               </div>
+                            <button onclick="pButton();">Change Password</button>
+                            </div>
+                       </div>
+                   </div>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            function pButton() {
+                var x = document.getElementById("password");
+                if (x.style.display ==="none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            }
+        </script>
+		
+		
+    </body>
+</html>

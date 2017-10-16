@@ -1,0 +1,83 @@
+<html>
+    <head>
+        {% load static %}
+        <title>Sign Up</title>
+		<link rel="stylesheet" type="text/css" href="{% static 'sapApp/signup.css' %}">
+    </head>
+    <body>
+	 <div class="webpage">
+            <div class="header">
+                <div class = "left">
+                    
+                        <div class="bar-photo">
+                            <a href="/sapApp/dashboard/"><img src = "{% static 'sapApp/Images/saplogo.png' %}" width=65 height=32></a>
+                        </div>
+                        <div class="bar-item-container">
+                            <div class="bar-item">
+                                <a href="/sapApp/students/"><span class="item">STUDENTS</span></a>
+                            </div>
+                            </div>
+                        
+                    <div class="dropdown2">
+                                <span class="item" style="margin-left: 1.8em; cursor: pointer;">GRADES</span>
+                            <div class="dropdown-content2">
+                        <ul>
+                            <a href="/sapApp/grades/"><li>Asia Pacific Japan</li></a>
+                            <a href="/sapApp/grades/"><li>Europe Middle East</li></a>
+                            <a href="/sapApp/grades/"><li>Moscow East Europe</li></a>
+                            <a href="/sapApp/grades/"><li>North America</li></a>
+                        </ul>
+                    </div>
+                        </div>
+                    
+                    
+                        <div class="bar-item-container">
+                            <div class="bar-item">
+                                <a href="/sapApp/reports/"><span class="item">REPORTS</span></a>
+                            </div>
+                        
+                    </div>
+                </div>
+                <div class = "right">
+                    <div class="bar-item2">
+                            <span class="greetings">Hi, Lyn Reyes!</span>
+                        </div>
+                        <div class="dropdown">
+                            <img src = "{% static 'sapApp/Images/usericon.png' %}" width=32 height=28>
+                            <div class="dropdown-content">
+                        <ul>
+                            <a href="/sapApp/userProfile"><li>My Profile</li></a>
+                            <a href="/sapApp/signUp/"><li>Create an Account</li></a>
+                            <a href="/sapApp/login/"><li>Log-out</li></a>
+                        </ul>
+                    </div>
+                        </div>
+                </div>
+            </div>
+            <div class="header2">
+                <div class="header2-bar2">
+                    <div class="item-container2">
+                    <div class="bar-title">
+                        <span class ="bigtext">Sign Up</span>
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="middle">
+                 <form action="{% url 'sapApp:signingUp' %}" method="post">
+                {% csrf_token %}
+                <div class="table-container">
+                    <div class="head2">First Name</div><input type="text" name="first_name" id="first_name"  class="input2">
+                    <div class="head3">Last Name</div><input type="text" name="last_name" id="last_name" class="input2">
+                    <div class="head3">Position</div><input type="text" name="work_position" id="work_position" class="input2">
+                    <div class="head3">Employee #</div><input type="text" name="employee_num" id="employee_num" class="input2">
+                    <div class="head3">Password</div><input type="text" name="password1" id="password1" class="input2">
+                    <div class="head3">Confirm Pass.</div><input type="text" name="password2" id="password2" class="input2"><br>
+                    <button type="submit" class="button1"> Submit</button>
+                </div>
+                </form>             
+            </div>
+        </div>
+    </body>
+</html>

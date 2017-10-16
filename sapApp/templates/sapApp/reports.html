@@ -1,0 +1,90 @@
+<html>
+    <head>
+        {% load static %}
+        <title>Analytical Reports</title>
+		<link rel="stylesheet" type="text/css" href="{% static 'sapApp/reports.css' %}">
+    </head>
+    <body>
+        <div class="webpage">
+            <div class="header">
+                <div class = "left">
+                    
+                        <div class="bar-photo">
+                            <a href="/sapApp/dashboard/"><img src = "{% static 'sapApp/Images/saplogo.png' %}" width=65 height=32></a>
+                        </div>
+                        <div class="bar-item-container">
+                            <div class="bar-item">
+                                <a href="/sapApp/students/"><span class="item">STUDENTS</span></a>
+                            </div>
+                            </div>
+                        
+                    <div class="dropdown2">
+                                <span class="item" style="margin-left: 1.8em; cursor: pointer;">GRADES</span>
+                            <div class="dropdown-content2">
+                        <ul>
+                            <a href="/sapApp/grades/"><li>Asia Pacific Japan</li></a>
+                            <a href="/sapApp/grades/"><li>Europe Middle East</li></a>
+                            <a href="/sapApp/grades/"><li>Moscow East Europe</li></a>
+                            <a href="/sapApp/grades/"><li>North America</li></a>
+                        </ul>
+                    </div>
+                        </div>
+                    
+                    
+                    
+                    
+                        <div class="bar-item-container">
+                            <div class="bar-item">
+                                <a href="/sapApp/reports/"><span class="item">REPORTS</span></a>
+                            </div>
+                        
+                    </div>
+                </div>
+                <div class = "right">
+                    <div class="bar-item2">
+                            <span class="greetings">Hi, Lyn Reyes!</span>
+                        </div>
+                        <div class="dropdown">
+                            <img src = "{% static 'sapApp/Images/usericon.png' %}usericon.png" width=32 height=28>
+                            <div class="dropdown-content">
+                        <ul>
+                            <a href="userprofile.html"><li>My Profile</li></a>
+                            <a href="Signup.html"><li>Create an Account</li></a>
+                            <a href="login.html"><li>Log-out</li></a>
+                        </ul>
+                    </div>
+                        </div>
+                </div>
+            </div>
+            <div class="header2">
+                <div class="header2-bar2">
+                    <div class="item-container2">
+                    <div class="bar-title">
+                        <span class ="bigtext">MY REPORTS</span>
+                    </div>
+                    <div class="search-container">
+                        <input type="text" class="search" placeholder="Search">
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="middle">
+                <div class="middle-container">
+                    <div class="top-color">.</div>
+                    <div class="title-reports">Types of Reports</div>
+                    <div class="options">
+                        <ul style="list-style-type:square">
+                            <a href="specificreport.html"><li>Grades of Students Per Assessment - NA</li></a>
+                            <a href="specificreport.html"><li>Grades of Students Per Assessment - APJ</li></a>
+                            <a href="specificreport.html"><li>Grades of Students Per Assessment - EMEA</li></a>
+                            <a href="specificreport.html"><li>Grades of Students Per Assessment - MEE</li></a>
+                            <a href="specificreport.html"><li>Top 5 Students with the Best Performance</li></a>
+                            <a href="specificreport.html"><li>Top 5 Students with the Worst Performance</li></a>
+                            <a href="specificreport.html"><li>Attendance of Students</li></a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

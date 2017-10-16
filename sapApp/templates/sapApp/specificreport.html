@@ -1,0 +1,69 @@
+<html>
+    <head>
+        {% load static %}
+        <title>Analytical Reports</title>
+		<link rel="stylesheet" type="text/css" href="{% static 'sapApp/specificreport.css' %}">
+    </head>
+    <body>
+        <div class="webpage">
+            <div class="header">
+                <div class="header-bar1">
+                    <div class="item-container">
+                        <div class="bar-photo">
+                            <a href="/sapApp/dashboard/"><img src = "{% static 'sapApp/Images/saplogo.png' %}" width=65 height=32></a>
+                        </div>
+                        <div class="bar-item-container">
+                        <div class="bar-item">
+                            <a href="/sapApp/students/"><span class="item">STUDENTS</span></a>
+                        </div>
+                            </div>
+                        <div class="bar-item-container">
+                        <div class="bar-item">
+                            <a href="/sapApp/grades/"><span class="item">GRADES</span></a>
+                        </div>
+                        </div>
+                        <div class="bar-item-container">
+                        <div class="bar-item">
+                            <a href="/sapApp/reports/"><span class="item">REPORTS</span></a>
+                        </div>
+                    </div>
+                        
+                    </div>
+                    <div class="item-container3">
+                        <div class="bar-item2">
+                            <span class="greetings">Hi, Lyn Reyes!</span>
+                        </div>
+                        <div class="bar-photo">
+                            <img src = "{% static 'sapApp/Images/usericon.png' %}" width=32 height=28>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header2">
+                <div class="header2-bar2">
+                    <div class="item-container2">
+                    <div class="bar-title">
+                        <span class ="bigtext">MY REPORTS</span>
+                    </div>
+                    <div class="search-container">
+                        <input type="text" class="search" placeholder="Search">
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="middle">
+                <div class="middle-container">
+                    <div class="top-color">.</div>
+                    <div class="title-reports">Example Name of Report</div>
+                    <div class="PDF">
+                            <embed src="No%20Silver%20Bullet.pdf" width=800 height=425 type="application/pdf">
+                    </div>
+                    <div class="Print">
+                        <button class="printpdf"><span style="font-size: 1.4em;">Print as PDF</span></button>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

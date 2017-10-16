@@ -1,0 +1,206 @@
+<html>
+    <head>
+        {% load static %}
+        <title>My Dashboard</title>
+		<link rel="stylesheet" type="text/css" href="{% static 'sapApp/dashboard.css' %}">
+    </head>
+    <body onload="off()">
+		<div id="overlay">
+			<div class="item-container4">
+				<div id="note"> Add a Note </div>
+				<div id="close" onclick="off()"> X </div>
+				<div id="item-container5">
+					<div id="title"> <input type="text" placeholder="Title" id="note_title"> </div>
+					<div id="content">
+						<textarea id="note_content" rows="4" cols="50"> </textarea>
+					</div>
+				</div>
+				<button id="addnote"> Add a Note </button>
+			</div>
+		</div>
+		
+		<div id="event_overlay">
+			<div class="item-container4">
+				<div id="note"> Add a Calendar Event </div>
+				<div id="close" onclick="off()"> X </div>
+				<div id="item-container6">
+					<div id="name"> Event Name: <input type="text" id="event_title"> </div>
+					<div id="date"> Date: <input type="date" id="event_date"> </div>
+					<div id="time"> Time: <input type="time" id="event_time"> </div>
+					<div id="color"> Color: <input type="color" id="event_color"> </div>
+					<div id="content"> Notes:
+						<textarea id="event_notes" rows="2" cols="8"> </textarea>
+					</div>
+				</div>
+				<button id="addevent"> Add an Event </button>
+			</div>
+		</div>
+		
+		
+		<div id="todo_overlay">
+			<div class="item-container7">
+				<div id="note"> Add To Do </div>
+				<div id="close" onclick="off()"> X </div>
+				<div id="item-container8">
+					<div id="todo_name"> Task: <input type="text" id="todo_title"> </div>
+					<div id="todo_time"> Time Due: <input type="time" id="todo_time"> </div>
+				</div>
+				<button id="addtodo"> Add Task </button>
+			</div>
+		</div>
+		
+		<div id="fullnote_overlay">
+			<div class="item-container4">
+				<div id="note"> Title of the note </div>
+				<div id="close" onclick="off()"> X </div>
+				<div id="item-container6">
+					<div id="full_content"> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </div>
+				</div>
+			</div>
+		</div>
+		
+		 <div id="upload_overlay">
+			<div class="item-container7">
+				<div id="note"> Upload A File </div>
+				<div id="close" onclick="off()"> X </div>
+				<div id="item-container6">
+                    <form action="/action_page.php">
+                            <input type="file" name="pic">
+                            <button id="uploadF"> Upload </button>  
+                    </form>
+				</div>
+			</div>
+        </div>
+		
+        <div class="webpage">
+            <div class="header">
+                <div class = "left">
+                    
+                        <div class="bar-photo">
+                            <a href="/sapApp/dashboard/"><img src = "{% static 'sapApp/Images/saplogo.png' %}" width=65 height=32></a>
+                        </div>
+                        <div class="bar-item-container">
+                            <div class="bar-item">
+                                <a href="/sapApp/students/"><span class="item">STUDENTS</span></a>
+                            </div>
+                            </div>
+                        
+                    <div class="dropdown2">
+                                <span class="item" style="margin-left: 1.8em; cursor: pointer;">GRADES</span>
+                            <div class="dropdown-content2">
+                        <ul>
+                            <a href="/sapApp/grades/"><li>Asia Pacific Japan</li></a>
+                            <a href="/sapApp/grades/"><li>Europe Middle East</li></a>
+                            <a href="/sapApp/grades/"><li>Moscow East Europe</li></a>
+                            <a href="/sapApp/grades/"><li>North America</li></a>
+                        </ul>
+                    </div>
+                        </div>
+                    
+                    
+                        <div class="bar-item-container">
+                            <div class="bar-item">
+                                <a href="/sapApp/reports/"><span class="item">REPORTS</span></a>
+                            </div>
+                        
+                    </div>
+                </div>
+                <div class = "right">
+                    <div class="bar-item2">
+                            <span class="greetings">Hi, {{ currentUser.first_name }} {{ currentUser.last_name }}!</span>
+                        </div>
+                        <div class="dropdown">
+                            <img src = "{% static 'sapApp/Images/usericon.png' %}" width=32 height=28>
+                            <div class="dropdown-content">
+                        <ul>
+                            <a href="/sapApp/userProfile/"><li>My Profile</li></a>
+                            <a href="/sapApp/signUp/"><li>Create an Account</li></a>
+                            <a href="/sapApp/exitSession/"><li>Log-out</li></a>
+                        </ul>
+                    </div>
+                        </div>
+                </div>
+            </div>
+            <div class="header2">
+                <div class="header2-bar2">
+                    <div class="item-container2">
+                    <div class="bar-title">
+                        <span class ="bigtext">MY DASHBOARD</span>
+						<span class="smalltext" onclick="uploadFile()"> Upload a File </span>
+						<span class="smalltext" onclick="addEvent()"> Add Calendar Event </span>
+						<span class="smalltext" onclick="addNote()"> Add Notes </span>
+						<span class="smalltext" onclick="addtoDo()"> Add To Do </span>
+                    </div>
+                    <div class="search-container">
+                        <input type="text" class="search" placeholder="Search">
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="middle">
+                <div class="post-container">
+                    <div class="post" onclick="expandNote()">
+                        <div class="top-color">.</div>
+                        <span class="title">Meeting Notes</span>
+                        <span class="body">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span>
+                        <span class="time">Date Modified: Oct. 10, 2017 </span>
+                    </div>
+                    <div class="post" onclick="expandNote()">
+                        <div class="top-color">.</div>
+                        <span class="title">Meeting Notes</span>
+                        <span class="body">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span>
+                        <span class="time">Date Modified: Oct. 10, 2017 </span>
+                    </div>
+                    <div class="post" onclick="expandNote()">
+                        <div class="top-color">.</div>
+                        <span class="title">Faculty Assessment</span>
+                        <span class="body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+                        <span class="time">Date Modified: Oct. 10, 2017 </span>
+                    </div>
+                </div>
+                <div class="side-container">
+                <div class="top-color2">.</div>
+                <div class="calendar">
+                    <span class="calendar-title">Calendar</span>
+                    <img src="{% static 'sapApp/Images/calendar.jpg' %}" width=400 style="margin-left: 1.7em; margin-top: 1em;">
+                    <div class="todo">
+                        <span class="todo-title">To-do List</span>
+                        
+                        <span class="todo-row"><input type="checkbox">Meeting at 9am</span>
+                        <span class="todo-row"><input type="checkbox">Grades due at 12nn</span>
+                        <span class="todo-row"><input type="checkbox">Meeting at 3pm</span>
+                        <span class="todo-row"><input type="checkbox">Meeting at 4pm</span>
+                    </div>
+                </div>
+            </div>
+            </div>
+            
+        </div>
+		
+		<script>
+			function addNote(){
+				document.getElementById("overlay").style.display = "block";
+			}
+			function addEvent(){
+				document.getElementById("event_overlay").style.display = "block";
+			}
+			function addtoDo(){
+				document.getElementById("todo_overlay").style.display ="block";
+			}
+			function expandNote(){
+				document.getElementById("fullnote_overlay").style.display = "block";
+			}
+			function uploadFile(){
+				document.getElementById("upload_overlay").style.display = "block";
+			}
+			function off(){
+				document.getElementById("overlay").style.display = "none";
+				document.getElementById("event_overlay").style.display = "none";
+				document.getElementById("todo_overlay").style.display = "none";
+				document.getElementById("fullnote_overlay").style.display = "none";
+				document.getElementById("upload_overlay").style.display = "none";
+			
+			}
+		</script>
+    </body>
+</html>

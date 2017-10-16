@@ -1,0 +1,72 @@
+
+	
+	#maincontainer{
+		width: 100%;
+		height: 45em;
+		background-color: #f2f2f2;
+		border-width: thin;
+		border-color: #7D7D7D;
+	}
+
+	#logocontainer{
+		width: 100%;
+		height: 70px;
+		background-color: white;
+		border-top: 2px thin #7D7D7D;
+	}
+
+	#logincontainer{
+		width: 30%;
+		height: 55%;
+		background-color: white;
+		margin-top: 5%;
+		margin-left: 33.5%;
+	}
+
+	.blueblock{
+		background-color: #0092D1;
+		height: 15%;
+		width: 100%;
+	}
+
+	p{
+		color: white;
+		font-family: calibri;
+		font-size: 20px;
+		font-weight: bold;
+	}
+
+	.fontUP{
+		font-family: calibri;
+		color: #7D7D7D;
+		font-size: 18px;
+	}
+
+	input{
+            width: 75%;
+            height: 35%;
+            padding: 12px 20px 12px 50px;
+            margin-top: 1%;
+			margin-left: 5%;
+            background-position: 6px 0px; 
+            background-size: 25px;
+            background-color: #f2f2f2;
+            border: 0;
+            outline: none;
+            text-decoration-color: white;
+	}
+
+	input[type=text]:focus {
+    	border: 3px solid #555;
+	}
+
+	button{
+		position: relative;
+		background-color: white;
+		color: #7D7D7D;
+		font-family: Calibri;
+		font-size: 25px;
+		border-style: groove;
+		margin-top: 40px;
+		margin-left: 75%;
+	}

@@ -1,0 +1,132 @@
+<html>
+    <head>
+        {% load static %}
+        <title>List of Students</title>
+		<link rel="stylesheet" type="text/css" href="{% static 'sapApp/students.css' %}">
+    </head>
+    <body>	
+	
+        <div class="webpage">
+            <div class="header">
+                <div class="header-bar1">
+                    <div class="item-container">
+                        <div class="bar-photo">
+                            <a href="/sapApp/dashboard/"><img src = "{% static 'sapApp/Images/saplogo.png' %}" width=65 height=32></a>
+                        </div>
+                        <div class="bar-item-container">
+                        <div class="bar-item">
+                            <a href="/sapApp/students/"><span class="item">STUDENTS</span></a>
+                        </div>
+                            </div>
+                        <div class="bar-item-container">
+                        <div class="bar-item">
+                            <a href="/sapApp/grades/"><span class="item">GRADES</span></a>
+                        </div>
+                        </div>
+                        <div class="bar-item-container">
+                        <div class="bar-item">
+                            <a href="/sapApp/reports/"><span class="item">REPORTS</span></a>
+                        </div>
+                    </div>
+                        
+                    </div>
+                    <div class="item-container3">
+                        <div class="bar-item2">
+                            <span class="greetings">Hi, Lyn Reyes!</span>
+                        </div>
+                        <div class="bar-photo">
+                            <img src = "{% static 'sapApp/Images/usericon.png' %}" width=32 height=28>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header2">
+                <div class="header2-bar2">
+                    <div class="item-container2">
+                    <div class="bar-title">
+                        <span class ="bigtext">MY STUDENTS</span>
+                    </div>
+                    <div class="search-container">
+                        <input type="text" class="search" placeholder="Search">
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="middle">
+                <div id="sortcontainer">
+					<button id="addStudent" onclick="addStudent()"> Add Students </button>
+					<form action="{% url 'sapApp:sortIt' %}" method = "post">
+                        {% csrf_token %}
+						<select name="sortby" class="textbox2">
+							<option value="1"> View by Country </option>    
+							<option value="2"> View by Territory </option>
+							<option value="3"> View by Last Name </option>
+							<option value="4"> View by Group </option> 
+						</select>
+						<button type="submit" class="item">REFRESH</button>
+                    </form>
+                </div>
+                <div style="overflow-y:auto;">
+                <div class="table-container">
+                    <div class="top-color">.</div>
+                    <div class="innercontainer">
+                    <table>
+                        <tr>
+
+                            <th><div class="bigger">Name</div></th>
+                            <th><div class="bigger">Group Number</div></th>
+                            <th><div class="bigger">Territory</div></th>
+                            <th><div class="bigger">Country</div></th>
+                        </tr>
+						{% for student in student_list %}
+                        <tr>
+                            <td><a href="{% url 'sapApp:students2' student.sap_id %}">{{student.last_name}}, {{student.first_name}}</a></td>
+                            <td>{{student.group_number}}</td>
+                            <td>{{student.territory}}</td>
+                            <td>{{student.country}}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                    </div>
+                </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        <div id="student_overlay">
+			<div class="item-container4">
+				<div id="note"> Add a Student </div>
+				<div id="close" onclick="off()"> X </div>
+                <form action="{% url 'sapApp:newStudent' %}" method = "post">
+                {% csrf_token %}
+				<div id="item-container6">
+                    <div id="lastname"> Last Name: <input type="text" class="info" name="newLast"> </div> 
+                    <div id="firstname"> First Name: <input type="text" class="info" name="newFirst"> </div>
+                    <div id="sapid"> SAP ID #: <input type="text" class="info" name="newSAP"> </div>
+                    <div id="email"> Email: <input type="email" class="info" name="newEmail"> </div>
+                    <div id="group"> Group Number: <input type="text" class="info" name="newGroup"> </div>
+                    <div id="territory"> Territory: <input type="text" class="info" name="newTerritory"> </div>
+                    <div id="country"> Country: <input type="text" class="info" name="newCountry"> </div>
+                    <div id="training"> Training Program: <input type="text" class="info" name="newTraining"> </div>
+                    <div id="manager"> Manager: <input type="text" class="info" name="newManager"> </div>
+				</div>
+                    <button id="addStud" type="submit"> Add Student </button>
+                </form>
+             </div>
+        </div>
+
+        
+        <script>
+            function addStudent(){
+				document.getElementById("student_overlay").style.display = "block";
+            }
+			function off(){
+				document.getElementById("student_overlay").style.display = "none";
+			}
+        </script>
+		
+    </body>
+</html>
